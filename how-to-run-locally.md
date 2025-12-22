@@ -1,6 +1,8 @@
 # Apache Fineract - Local Testing Guide
 
-This guide provides comprehensive instructions on how to run local tests with APIs in the Apache Fineract repository.
+This guide provides comprehensive instructions for running local API tests within the Apache Fineract repository. Follow these steps to ensure your environment is correctly configured and your tests run efficiently.
+
+---
 
 ## Table of Contents
 
@@ -17,21 +19,21 @@ This guide provides comprehensive instructions on how to run local tests with AP
 
 ### Prerequisites
 
-- **Java 21** (Azul Zulu JDK recommended)
-- **Database**:  MariaDB >= 11.5.2, PostgreSQL >= 17.0, or MySQL >= 9.1
-- **RAM**:  Minimum 16GB
-- **CPU**: Minimum 8 cores
-- **Git**: For source code management
-- **Gradle 8.14. 3**:  Included via wrapper
+Before starting, ensure your local machine meets the following hardware and software requirements:
+
+* **Java:** Java 21 (Azul Zulu JDK recommended).
+* **Database:** * MariaDB ≥ 11.5.2
+    * PostgreSQL ≥ 17.0
+    * MySQL ≥ 9.1
+* **Hardware:** Minimum **16GB RAM** and **8-core CPU**.
+* **Git:** Required for source code management.
+* **Gradle:** Version 8.14.3 (managed via the included Gradle wrapper).
 
 ### Starting Fineract Locally
 
-Start the Fineract application in development mode:
+Follow these commands to initialize your databases and launch the application in development mode.
 
+**1. Create the required databases:**
 ```bash
-# Create required databases
 ./gradlew createDB -PdbName=fineract_tenants
 ./gradlew createDB -PdbName=fineract_default
-
-# Start Fineract in development mode
-./gradlew devRun
