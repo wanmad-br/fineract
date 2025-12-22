@@ -1,5 +1,3 @@
-#!/bin/bash
-#
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements. See the NOTICE file
 # distributed with this work for additional information
@@ -16,22 +14,14 @@
 # KIND, either express or implied. See the License for the
 # specific language governing permissions and limitations
 # under the License.
-#
 
-echo "Shutting down Fineract Kubernetes deployment..."
+# See comment below license in .atr-rat-excludes-src.txt for an explanation of
+# what this is.
 
-echo "Deleting mifos-community..."
-kubectl delete -f fineract-mifoscommunity-deployment.yml --ignore-not-found=true
+# if you make changes here, sort this list before committing asciibetically
+# with en_US.UTF-8 lang/locale
+.rat-excludes
+README.md
+fineract-documentation.pdf
 
-echo "Deleting fineract-server..."
-kubectl delete -f fineract-server-deployment.yml --ignore-not-found=true
-
-echo "Deleting fineractmysql..."
-kubectl delete -f fineractmysql-deployment.yml --ignore-not-found=true
-kubectl delete -f fineractmysql-configmap.yml --ignore-not-found=true
-
-echo "Deleting secrets..."
-kubectl delete secret fineract-tenants-db-secret --ignore-not-found=true
-
-echo
-echo "Fineract Kubernetes deployment has been shut down."
+# vim:ft=conf

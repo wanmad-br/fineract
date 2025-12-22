@@ -56,7 +56,7 @@ public class LoanReAmortizationStepDef extends AbstractStepDef {
     private final FineractFeignClient fineractClient;
     private final EventAssertion eventAssertion;
 
-    @When("When Admin creates a Loan re-amortization transaction on current business date")
+    @When("Admin creates a Loan re-amortization transaction on current business date")
     public void createLoanReAmortization() {
         PostLoansResponse loanResponse = testContext().get(TestContextKey.LOAN_CREATE_RESPONSE);
         long loanId = loanResponse.getLoanId();
@@ -81,7 +81,7 @@ public class LoanReAmortizationStepDef extends AbstractStepDef {
         testContext().set(TestContextKey.LOAN_REAMORTIZATION_RESPONSE, response);
     }
 
-    @When("When Admin creates a Loan re-amortization transaction on current business date by loan external ID")
+    @When("Admin creates a Loan re-amortization transaction on current business date by loan external ID")
     public void createLoanReAmortizationByLoanExternalId() {
         PostLoansResponse loanResponse = testContext().get(TestContextKey.LOAN_CREATE_RESPONSE);
         String loanExternalId = loanResponse.getResourceExternalId();
